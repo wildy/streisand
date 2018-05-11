@@ -68,28 +68,28 @@
 
 <a name="ssl-android"></a>
 ### Android ###
-These instructions work for Chrome. Firefox for Android uses its own internal Certificate Manager but does not provide an interface for importing certificates yet. Chrome is therefore the recommended way to connect to the Streisand Gateway.
+Эти инструкции работают для Chrome. Firefox для Android использует свой собственный менеджер сертификатов, но пока не предоставляет никакого интерфейса для импорта сертификатов. Поэтому, сейчас Chrome является предпочтительным браузером для подключения к Шлюзу Streisand.
 
-#### Less secure, but easy ####
+#### Менее безопасный, но более простой способ ####
+1. [Скачайте](#download) SSL-сертификат, встроенный в эту страницу.
+1. Перешлите скачанный сертификат на адрес, который Вы сможете открыть на устройстве Android.
+1. Откройте сообщение и нажмите на вложенный сертификат.
+1. Появится всплывающее окно. Введите {{ streisand_server_name }} в поле *Имя сертификата*, и убедитесь, что в поле *Использование сертификата* выбрано *VPN и приложения*.
+1. Нажмите *OK*.
+1. Всё готово к подключению. См. [Соединение с вашим Шлюзом Streisand](#connecting-ssl).
 
-1. [Download the SSL certificate](#download) embedded in this document.
-1. Email the downloaded certificate to an account that can be accessed from the Android device.
-1. Open the email and tap the attachment.
-1. A popup will appear. Enter `{{ streisand_server_name }}` for the *Certificate name*, and make sure *VPN and apps* is selected for the *Credential use* value.
-1. Tap *OK*.
-1. You are ready to connect. See [Connecting to your Streisand Gateway](#connecting-ssl).
-
-#### More secure ####
-1. Connect the Android device to your computer.
-1. [Download the SSL certificate](#download) embedded in this document.
-1. Drag the downloaded certificate to the root of the Android device's filesystem.
-1. Launch the *Settings* application.
-1. Scroll to the *Personal* section and tap *Security*.
-1. Scroll to the *Credential Storage* section and tap *Install from storage*.
-1. Select the certificate that you copied to your phone.
-1. Enter `{{ streisand_server_name }}` for the *Certificate name*, and make sure *VPN and apps* is selected for the *Credential use* value.
-1. Tap *OK*.
-1. You are ready to connect. See [Connecting to your Streisand Gateway](#connecting-ssl).
+#### Более безопасный метод ####
+1. Подключите устройство Android к вашему компьютеру.
+1. [Скачайте](#download) SSL-сертификат, встроенный в эту страницу.
+1. Перетащите скачанный сертификат в корневую папку файловой системы вашего устройства Android.
+1. Запустите приложение *Настройки*.
+1. Пролистайте в секцию *Личные* и нажмите *Безопасность*.
+1. Пролистайте к пункту *Хранилище сертификатов* и нажмите *Установить с карты памяти*.
+1. Выберите сертификат, который вы ранее скопировали на свое устройство.
+1. Введите {{ streisand_server_name }} в поле *Имя сертификата*, 
+1. Появится всплывающее окно. Введите {{ streisand_server_name }} в поле *Имя сертификата*, и убедитесь, что в поле *Использование сертификата* выбрано *VPN и приложения*.
+1. Нажмите *OK*.
+1. Всё готово к подключению. См. [Соединение с вашим Шлюзом Streisand](#connecting-ssl).
 
 
 <a name="ssl-ios"></a>
