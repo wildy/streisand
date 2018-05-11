@@ -1,0 +1,51 @@
+{% include "languages.md.j2" %}
+
+Информация о межсетевом экране
+------------------------------
+
+Эти порты открыты по умолчанию при установке нового сервера Streisand у поддерживаемого провайдера.
+
+Если вы устанавливаете Streisand на существующий сервер или у другого провайдера, вы должны убедиться, что межсетевой экран разрешает трафик к новому серверу на следующие порты:
+
+---
+* Nginx (Шлюз Streisand)
+  * TCP - {{ nginx_port }}
+{% if streisand_le_enabled %}
+* HTTP (Let's Encrypt)
+  * TCP - {{ le_port }}
+{% endif %}
+{% if streisand_openconnect_enabled %}
+* OpenConnect / Cisco AnyConnect
+  * TCP - {{ ocserv_port }}
+  * UDP - {{ ocserv_port }}
+{% endif %}
+* OpenSSH
+  * TCP - {{ ssh_port }}
+{% if streisand_openvpn_enabled %}
+* OpenVPN
+  * UDP - 53 to/from `{{ dnsmasq_openvpn_tcp_ip }}`
+  * UDP - 53 to/from `{{ dnsmasq_openvpn_udp_ip }}`
+    * Dnsmasq слушает и отвечает OpenVPN-клиентам на DNS-запросы на следующих адресах.
+  * TCP - {{ openvpn_port }}
+  * UDP - {{ openvpn_port_udp }}
+{% if streisand_stunnel_enabled %}
+* stunnel
+  * TCP - {{ stunnel_remote_port }}
+{% endif %}
+{% endif %}
+{% if streisand_shadowsocks_enabled %}
+* Shadowsocks
+  * TCP - {{ shadowsocks_server_port }}
+  * UDP - {{ shadowsocks_server_port }}
+{% endif %}
+{% if streisand_tor_enabled %}
+* Tor
+  * TCP - {{ tor_orport }} - Порт моста
+  * TCP - {{ tor_obfs4_port }} - Подключаемый транспорт obfs4
+{% endif %}
+{% if streisand_wireguard_enabled %}
+* WireGuard
+  * UDP - 53 на/от `{{ dnsmasq_wireguard_ip }}`
+    * Dnsmasq слушает и отвечает клиентам Wireguard на DNS-запросы на следующих адресах.
+  * UDP - {{ wireguard_port }}
+{% endif %}
