@@ -39,36 +39,36 @@
 
 Теперь вы готовы к настройке Twitte и Firefox для того, чтобы они пропускали трафик через Orbot.
 
-#### Configuring Twitter for Android to use Orbot ####
-1. Open Twitter.
-1. Tap the three dots in the upper-right of the screen to open the menu.
-1. Choose *Settings*.
-1. Tap *General*.
-1. Tap *Proxy*.
-1. Check the *Enable HTTP Proxy* checkbox.
-1. Tap *Proxy Host* and enter `127.0.0.1`.
-1. Tap *Proxy Port* and enter `8118`.
+#### Настройка Twitter на Android для использования Orbot №№№№
+1. Откройте Twitter
+1. Коснитесь трех точек в верхнем правом углу экрана, чтобы открыть меню.
+1. Выберите *Настройки*.
+1. Выберите *Общие*.
+1. Выберите *Прокси*.
+1. Поставьте галочку *Включить HTTP-прокси*.
+1. Коснитесь поля *Хост прокси* и введите `127.0.0.1`.
+1. Коснитесь поля *Порт прокси* и введите `8118`.
 
-#### Configuring Firefox for Android to use Orbot ####
-1. Open Firefox.
-1. Type `about:config` into the address bar and tap the *Go* button on your keyboard.
-1. Type `proxy` into the search box.
-1. Set the value of *network.proxy.socks* to `127.0.0.1`.
-1. Set the value of *network.proxy.socks_port* to `9050`.
-1. Set the value of *network.proxy.socks\_remote\_dns* to `true`.
-1. Set the value of *network.proxy.type* to `1`.
+#### Настройка Firefox на Android для использования Orbot №№№№
+1. Откройте Firefox.
+1. В адресной строке введите `about:config` и нажмите кнопку перехода на клавиатуре.
+1. Введите `proxy` в строку поиска.
+1. Установите значение *network.proxy.socks* в `127.0.0.1`.
+1. Установите значение *network.proxy.socks_port* в `9050`.
+1. Установите значение *network.proxy.socks\_remote\_dns* в `true`.
+1. Установите значение *network.proxy.type* в `1`.
 
 <a name="ios"></a>
 ### iOS ###
-1. Download [Onion Browser](https://itunes.apple.com/us/app/onion-browser/id519296448?mt=8) and launch it.
-1. Tap the menu button on the bottom of the screen and choose *Browser Settings*.
-1. Scroll to the bottom and tap *Configure Bridges*
-1. Tap *Enter Custom Bridges*.
-1. Tap the camera icon in the lower-right corner. You may need to enable camera access for Onion Browser in your iOS Settings.
-1. Scan the following QR code. This will automatically configure Onion Browser to connect to this server using the obfs4 pluggable transport:
+1. Скачайте [Onion Browser](https://itunes.apple.com/us/app/onion-browser/id519296448?mt=8) и запустите его.
+1. Коснитесь кнопки меню внизу экрана и выберите *Настройки браузера*.
+1. Пролистайте вниз и нажмите *Настроить мосты*.
+1. Коснитесь пункта *Ввести собственные мосты*.
+1. Коснитесь значка камеры в левом нижнем углу. Вам может понадобиться разрешить доступ к камере для Onion Browser в Настройках iOS.
+1. Просканируйте QR код, показанный ниже. Это автоматически настроит Onion Browser, чтобы он подключался к этому серверу, используя подключаемый транспорт obfs4:
 
    ![Tor obfs4 QR code](/tor/tor-obfs4-qr-code.png)
-1. Tap *OK* when the confirmation is displayed.
-1. Tap *Save*.
-1. Tap *Restart app*.
-1. Relaunch the application. If you successfully connect, the *{{ tor_bridge_nickname.stdout }}* bridge is working correctly, and your connection is obscured by the obfs4 pluggable transport so it doesn't look like Tor traffic at all!
+1. Коснитесь *OK* в диалоге подтверждения.
+1. Нажмите *Сохранить*.
+1. Нажмите *Перезапустить приложение*.
+1. Перезапустите приложение. Если вы подключились успешно, значит мост *{{ tor_bridge_nickname.stdout }}* работает штатно, и ваш зашифрованный трафик полностью изменен с помощью obfsproxy так, что он совсем не выглядит как трафик Tor!
