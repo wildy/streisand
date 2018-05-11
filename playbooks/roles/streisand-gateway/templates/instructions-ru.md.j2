@@ -153,20 +153,20 @@
 
 
 <a name="ssl-manual"></a>
-### Manual SSL Verification ###
-*The manual certificate verification option is significantly less secure than installing the certificate using one of the methods above. Your browser will display a warning message, and you are more vulnerable to man-in-the-middle attacks because the fingerprints must be verified on every connection attempt. It should be used with great care, and only as a last resort.*
+### Ручная проверка SSL-сертификата ###
+*Ручная проверка сертификата значительно менее безопасна, чем установка сертификата, используя один из способов выше. Ваш браузер будет показывать предупредительные сообщения, и вы станете более уязвимы к атакам "человек посередине", так как придется сверять отпечатки сертификата при каждой попытке подключения. Вы должны использовать ручную проверку с большой осторожностью, и только в качестве последней возможности."
 
-The certificate details should match the following information:
+Информация о сертификате должна совпадать со следующими значениями:
 
-##### Serial Number #####
+##### Порядковый номер #####
 `{{ ssl_certificate_serial_number.stdout }}`
 
-##### Fingerprints #####
+##### Отпечатки #####
 {% for fingerprint in ssl_certificate_fingerprints.results %}
     {{ fingerprint.stdout }}
 {% endfor %}
 
-If everything checks out, you are ready to connect. See [Connecting to your Streisand Gateway](#connecting-ssl).
+Если все совпало, вы готовы к подключению. Смотрите [Соединение с вашим Шлюзом Streisand](#connecting-ssl).
 {% endif %}
 
 
