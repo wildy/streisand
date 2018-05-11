@@ -1,0 +1,59 @@
+{% include "languages.md.j2" %}
+
+Добро пожаловать на сервер Шлюза [Streisand](https://github.com/StreisandEffect/streisand) **{{ streisand_server_name }}**. Вы в нескольких шагах от нецензурируемого соединения с Интернетом.
+
+Инструкции по подключению
+-------------------------
+---
+
+Есть несколько способов обхода цензуры, и Streisand предоставляет несколько вариантов различных протоколов в случае, если доступ к некоторым из них ограничен.
+
+{% if streisand_openconnect_enabled %}
+* [OpenConnect / Cisco AnyConnect](/openconnect/)
+{% endif %}
+{% if streisand_openvpn_enabled %}
+* [OpenVPN (прямое соединение)](/openvpn/)
+{% if streisand_stunnel_enabled %}
+* [OpenVPN (через stunnel)](/openvpn/stunnel.html)
+{% endif %}
+{% endif %}
+{% if streisand_shadowsocks_enabled %}
+* [Shadowsocks](/shadowsocks/)
+{% endif %}
+{% if streisand_ssh_forward_enabled %}
+* [SSH](/ssh/)
+{% endif %}
+{% if streisand_tor_enabled %}
+* [Tor](/tor/)
+{% endif %}
+{% if streisand_wireguard_enabled %}
+* [WireGuard](/wireguard/)
+{% endif %}
+
+{% if streisand_mirrored_clients %}
+Зеркала клиентского программного обеспечения
+--------------------------------------------
+---
+
+Вы можете скачать все необходимое клиентское ПО прямо из Streisand, если официальные веб-сайты заблокированы. Версии этого ПО могут быть немного устаревшими (в зависимости от того, когда был установлен этот сервер), но они могут быть легко обновлены, как только вы подключитесь к открытому Интернету.
+
+{% if streisand_openconnect_enabled %}
+* [OpenConnect](/mirror/openconnect/)
+{% endif %}
+{% if streisand_openvpn_enabled %}
+* [OpenVPN](/mirror/openvpn/)
+{% if streisand_stunnel_enabled %}
+* [stunnel](/mirror/stunnel/)
+{% endif %}
+{% endif %}
+{% if streisand_shadowsocks_enabled %}
+* [Shadowsocks](/mirror/shadowsocks/)
+{% endif %}
+{% if streisand_ssh_forward_enabled %}
+* [SSH](/mirror/ssh/)
+{% endif %}
+{% if streisand_tor_enabled %}
+* [Tor Browser Bundle](/mirror/tor/)
+{% endif %}
+
+{% endif %}
