@@ -25,19 +25,19 @@
 
 <a name="android"></a>
 ### Android ###
-1. Download [Orbot](https://play.google.com/store/apps/details?id=org.torproject.android) and launch it.
-1. Tap the *Menu* button.
-1. Tap *QR Codes*.
-1. Tap *Scan BridgeQR*.
-1. Scan the following QR code. This will automatically configure Orbot to connect to this server using the obfs4 pluggable transport:
+1. Скачайте [Orbot](https://play.google.com/store/apps/details?id=org.torproject.android) и запустите его.
+1. Коснитесь кнопки *Меню*.
+1. Коснитесь *QR Коды*.
+1. Коснитесь *Просканировать BridgeQR*.
+1. Просканируйте QR код, показанный ниже. Это автоматически настроит Orbot, чтобы он подключался к этому серверу, используя подключаемый транспорт obfs4:
 
-   ![Tor obfs4 QR code](/tor/tor-obfs4-qr-code.png)
-1. You must restart Orbot in order for the changes to take effect. Tap the *Menu* button, select *Exit*, and launch Orbot again.
+   ![QR-код obfs4 для Tor](/tor/tor-obfs4-qr-code.png)
+1. Вам нужно перезапустить Orbot, чтобы изменения заработали. Коснитесь кнопки *Меню*, выберите *Выход* и запустите Orbot снова.
 1. Long press on the power button to activate Orbot.
 
-Great! Orbot has connected to the *{{ tor_bridge_nickname.stdout }}* bridge server!
+Отлично! Orbot теперь соединен с сервером-мостом *{{ tor_bridge_nickname.stdout }}*!
 
-You are now ready to configure Twitter and Firefox to route their traffic through Orbot.
+Теперь вы готовы к настройке Twitte и Firefox для того, чтобы они пропускали трафик через Orbot.
 
 #### Configuring Twitter for Android to use Orbot ####
 1. Open Twitter.
